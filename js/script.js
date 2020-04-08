@@ -1,6 +1,7 @@
 console.log("I'm working");
 
-let emptyGameBoard = ["", "", "", "", "", "", "", "", ""];
+
+const emptyGameBoard = ["", "", "", "", "", "", "", "", ""];
 const humanPlayer = 'X';
 const computerPlayer = 'O';
 const winningCombos = [
@@ -11,7 +12,45 @@ const winningCombos = [
     [1, 4, 7], // top middle to bottom middle
     [2, 5, 8], // right top to right bottom
     [0, 4, 8], // diagonal top left to bottom right
-    [6, 4, 2]  // diagonal top right to bottom left
+    [6, 4, 2]  // diagonal bottom left to top right
 ];
 
-const squares = document.querySelectorAll('.square');
+
+
+// let activeBoard = emptyGameBoard
+
+
+
+let clickBoard = () => {
+    console.log("hello");
+};
+
+// let nextTurn = (squareId, player) => {
+// 	activeBoard[squareId] = humanPlayer;
+// 	document.getElementById(squareId).innerText = humanPlayer;
+// }
+
+
+// let startGame = () => {
+    
+
+//     for (let i = 0; i < activeBoard.length; i++) {
+//         // activeBoard[i].innerText = '';
+//         //activeBoard[i].style.removeProperty('background-color');
+        
+//     }
+
+// }
+
+
+
+
+//*********************FRONT END LOGIC */
+
+let btn = document.getElementById('#btn');
+btn.addEventListener('click', clickBoard, false);
+// activeBoard[i].addEventListener('click', clickBoard, false);
+
+// const squares = document.querySelectorAll('.square');
+// startGame();
+// Create X in a square
