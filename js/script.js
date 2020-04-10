@@ -35,7 +35,7 @@ function startGame() {
 
 function clickBoard(square) {
     console.log(square.target.id)
-	// nextTurn(square.target.id, humanPlayer)
+	nextTurn(square.target.id, humanPlayer)
 }
 document.getElementById("sq0").addEventListener("click", clickBoard);
 document.getElementById("sq1").addEventListener("click", clickBoard);
@@ -47,10 +47,10 @@ document.getElementById("sq7").addEventListener("click", clickBoard);
 document.getElementById("sq8").addEventListener("click", clickBoard);
 
 
-// function nextTurn(squareId, player) {
-//     emptyGameBoard[squareId] = player;
-//     document.getElementById(squareId).innerText = player;
-// }
+function nextTurn(squareId, player) {
+    emptyGameBoard[squareId] = player;
+    document.getElementById(squareId).innerText = player;
+}
 // let clickBoard = () => {
 //     console.log("hello");
 // };
