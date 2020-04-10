@@ -29,14 +29,14 @@ function startGame() {
 // 		squares[i].style.removeProperty('background-color');
 // 		squares[i].addEventListener('click', clickBoard, false);
 // 	}
-// }
+}
 
 
 
-// function clickBoard(square) {
-//     console.log(square.target.id)
-// 	// nextTurn(square.target.id, humanPlayer)
-// }
+function clickBoard(square) {
+    console.log(square.target.id)
+	// nextTurn(square.target.id, humanPlayer)
+}
 document.getElementById("sq0").addEventListener("click", clickBoard);
 document.getElementById("sq1").addEventListener("click", clickBoard);
 document.getElementById("sq2").addEventListener("click", clickBoard);
