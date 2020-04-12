@@ -1,7 +1,7 @@
 console.log("I'm working");
 
 
-let emptyGameBoard; // = ["", "", "", "", "", "", "", "", ""];
+let emptyGameBoard = ["", "", "", "", "", "", "", "", ""];
 const humanPlayer = 'X';
 const computerPlayer = 'O';
 const winningCombos = [
@@ -21,14 +21,14 @@ const squares = document.querySelectorAll('.square');
 startGame();
 
 function startGame() {
-	// document.querySelector(".gameover").style.display = "none";
+	document.querySelector(".gameover").style.display = "none";
     emptyGameBoard = Array.from(Array(9).keys());
     console.log(emptyGameBoard);
-// 	for (let i = 0; i < squares.length; i++) {
-// 		squares[i].innerText = '';
-// 		squares[i].style.removeProperty('background-color');
-// 		squares[i].addEventListener('click', clickBoard, false);
-// 	}
+	for (let i = 0; i < squares.length; i++) {
+		squares[i].innerText = '';
+		squares[i].style.removeProperty('background-color');
+		// squares[i].addEventListener('click', clickBoard, false);
+	}
 }
 
 
@@ -40,6 +40,7 @@ function clickBoard(square) {
 document.getElementById("sq0").addEventListener("click", clickBoard);
 document.getElementById("sq1").addEventListener("click", clickBoard);
 document.getElementById("sq2").addEventListener("click", clickBoard);
+document.getElementById("sq3").addEventListener("click", clickBoard);
 document.getElementById("sq4").addEventListener("click", clickBoard);
 document.getElementById("sq5").addEventListener("click", clickBoard);
 document.getElementById("sq6").addEventListener("click", clickBoard);
@@ -50,28 +51,25 @@ document.getElementById("sq8").addEventListener("click", clickBoard);
 function nextTurn(squareId, player) {
     emptyGameBoard[squareId] = player;
     document.getElementById(squareId).innerText = player;
+    checkWinner();
 }
-// let clickBoard = () => {
-//     console.log("hello");
-// };
 
-// let nextTurn = (squareId, player) => {
-// 	activeBoard[squareId] = humanPlayer;
-// 	document.getElementById(squareId).innerText = humanPlayer;
-// }
+// Create checkWinner function and gameOver function
 
+function checkWinner () {
+    if (squares[0].textContent === 'X' && squares[1].textContent === 'X' && squares[2].textContent === 'X') {
+        alert("X wins Top Row Across!");
+    } else if (squares[3].textContent === 'X' && squares[4].textContent === 'X' && squares[5].textContent === 'X') {
+        alert("X wins Middle Row Across");
+    } else if (squares[6].textContent === 'X' && squares[7].textContent === 'X' && squares[8].textContent === 'X') {
+        alert("X wins Bottom Row Across");
+    } else if (squares[0].textContent === 'X' && squares[4].textContent === 'X' && squares[8].textContent === 'X') {
+        alert("X wins Diagonal Top Left to Bottom Right")
+    } else if (squares[2].textContent === 'X' && squares[4].textContent === 'X' && squares[6].textContent === 'X') {
+        alert("X wins Diagonal Top Right to Bottom Left")
+    }
 
-// let startGame = () => {
-    
-
-//     for (let i = 0; i < activeBoard.length; i++) {
-//         // activeBoard[i].innerText = '';
-//         //activeBoard[i].style.removeProperty('background-color');
-        
-//     }
-
-// }
-
+}
 
 
 
