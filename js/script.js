@@ -21,7 +21,7 @@ startGame();
 
 function startGame() {
 	document.querySelector(".gameover").style.display = "none";
-    emptyGameBoard = Array.from(Array(9).keys());
+    // emptyGameBoard = Array.from(Array(9).keys());
     console.log(emptyGameBoard);
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].innerText = '';
@@ -32,7 +32,9 @@ function startGame() {
 
 function clickBoard(square) {
     console.log(square.target.id)
-	nextTurn(square.target.id);
+    nextTurn(square.target.id);
+    
+    // parseInt(square.target.id[2])
 }
 
 document.getElementById("sq0").addEventListener("click", clickBoard);
@@ -46,9 +48,10 @@ document.getElementById("sq7").addEventListener("click", clickBoard);
 document.getElementById("sq8").addEventListener("click", clickBoard);
 
 function nextTurn(squareId) {
-    emptyGameBoard[squareId] = activePlayer;
+    emptyGameBoard[parseInt(squareId[2])] = activePlayer;
     document.getElementById(squareId).innerText = activePlayer;
     checkWinner();
+    checkTie();
     if (activePlayer === 'X') {
         activePlayer = computerPlayer;
     } else if (activePlayer === 'O') {
@@ -91,9 +94,21 @@ function checkWinner () {
         alert("O wins Diagonal Top Right to Bottom Left");
     } else if (squares[2].textContent === 'O' && squares[4].textContent === 'O' && squares[6].textContent === 'O') {
         alert("O wins Diagonal Top Left to Bottom Right");
-    }
+    } 
 }
 
+function checkTie() {
+    var counter = 0;
+    for (let i = 0; i < emptyGameBoard.length; i++) {
+        if (emptyGameBoard[i] != "" ) {
+            counter += 1;
+            console.log(counter);
+        }
+    }
+    if (counter === 9) {
+        alert("Game is a Tie!")
+    }
+} 
 
 
 //*********************FRONT END LOGIC */
