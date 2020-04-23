@@ -63,37 +63,37 @@ function nextTurn(squareId) {
 
 function checkWinner () {
     if (squares[0].textContent === 'X' && squares[1].textContent === 'X' && squares[2].textContent === 'X') {
-        alert("X wins Top Row Across!");
+        document.getElementById("message").textContent = "X wins Top Row Across!";
     } else if (squares[3].textContent === 'X' && squares[4].textContent === 'X' && squares[5].textContent === 'X') {
-        alert("X wins Middle Row Across");
+        document.getElementById("message").textContent = "X wins Middle Row Across";
     } else if (squares[6].textContent === 'X' && squares[7].textContent === 'X' && squares[8].textContent === 'X') {
-        alert("X wins Bottom Row Across");
+        document.getElementById("message").textContent = "X wins Bottom Row Across";
     } else if (squares[0].textContent === 'X' && squares[3].textContent === 'X' && squares[6].textContent === 'X') {
-        alert("X wins Left Row Horizontal");
+        document.getElementById("message").textContent = "X wins Left Row Horizontal";
     } else if (squares[1].textContent === 'X' && squares[4].textContent === 'X' && squares[7].textContent === 'X') {
-        alert("X wins Middle Row Horizontal")
+        document.getElementById("message").textContent = "X wins Middle Row Horizontal";
     } else if (squares[2].textContent === 'X' && squares[5].textContent === 'X' && squares[8].textContent === 'X') {
-        alert("X wins Right Row Horizontal")
+        document.getElementById("message").textContent = "X wins Right Row Horizontal";
     } else if (squares[0].textContent === 'X' && squares[4].textContent === 'X' && squares[8].textContent === 'X') {
-        alert("X wins Diagonal Top Left to Bottom Right")
+        document.getElementById("message").textContent = "X wins Diagonal Top Left to Bottom Right";
     } else if (squares[2].textContent === 'X' && squares[4].textContent === 'X' && squares[6].textContent === 'X') {
-        alert("X wins Diagonal Top Right to Bottom Left")
+        document.getElementById("message").textContent = "X wins Diagonal Top Right to Bottom Left";
     } else if (squares[0].textContent === 'O' && squares[1].textContent === 'O' && squares[2].textContent === 'O') {
-        alert("O wins Top Row Across!");
+        document.getElementById("message").textContent = "O wins Top Row Across!";
     } else if (squares[3].textContent === 'O' && squares[4].textContent === 'O' && squares[5].textContent === 'O') {
-        alert("O wins Middle Row Across!");
+        document.getElementById("message").textContent = "O wins Middle Row Across!";
     } else if (squares[6].textContent === 'O' && squares[7].textContent === 'O' && squares[7].textContent === 'O') {
-        alert("O wins Bottom Row Across!");
+        document.getElementById("message").textContent = "O wins Bottom Row Across!";
     } else if (squares[0].textContent === 'O' && squares[3].textContent === 'O' && squares[6].textContent === 'O') {
-        alert("O wins Left Row Horizontal");
+        document.getElementById("message").textContent = "O wins Left Row Horizontal";
     } else if (squares[1].textContent === 'O' && squares[4].textContent === 'O' && squares[7].textContent === 'O') {
-        alert("O wins Middle Row Horizontal")
+        document.getElementById("message").textContent = "O wins Middle Row Horizontal";
     } else if (squares[2].textContent === 'O' && squares[5].textContent === 'O' && squares[8].textContent === 'O') {
-        alert("O wins Right Row Horizontal")
+        document.getElementById("message").textContent = "O wins Right Row Horizontal";
     } else if (squares[0].textContent === 'O' && squares[4].textContent === 'O' && squares[8].textContent === 'O') {
-        alert("O wins Diagonal Top Right to Bottom Left");
+        document.getElementById("message").textContent = "O wins Diagonal Top Left to Bottom Right";
     } else if (squares[2].textContent === 'O' && squares[4].textContent === 'O' && squares[6].textContent === 'O') {
-        alert("O wins Diagonal Top Left to Bottom Right");
+        document.getElementById("message").textContent = "O wins Diagonal Top Right to Bottom Left";
     } 
 }
 
@@ -107,6 +107,7 @@ function checkTie() {
     }
     if (counter === 9) {
         alert("Game is a Tie!")
+        document.getElementById("message").textContent = "Game ends in a Tie!";
     }
 } 
 
@@ -116,6 +117,7 @@ function checkTie() {
 // let btn = document.getElementById('#btn');
 // btn.addEventListener('click', clickBoard, false);
 // activeBoard[i].addEventListener('click', clickBoard, false);
+document.getElementById("restart-game").addEventListener("click", startGame);
 
 
 
